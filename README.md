@@ -78,4 +78,61 @@ Connect with me
 <a href="mailto:jainsparsh0801@gmail.com" ><img height="25" alt="Nodejs" src="https://img.shields.io/static/v1.svg?message=jainsparsh0801@gmail.com&label=send&style=flat-square&logo=gmail&color=red&logoColor=red&colorA=grey&link=mailto:jainsparsh0801@gmail.com" /> </a> <a href="https://www.github.com/SparshJain2000/" ><img height="25" alt="Nodejs" src="https://img.shields.io/static/v1.svg?label=follow&message=@SparshJain2000&color=grey&logo=github&style=for-the-badge&logoColor=white&colorA=black" /> </a> <a href="https://www.linkedin.com/in/sparsh-jain-87379a168/" ><img height="25" alt="Nodejs" src="https://img.shields.io/static/v1.svg?label=connect&message=@SparshJain&color=success&logo=linkedin&style=for-the-badge&logoColor=white&colorA=blue" /> </a>
 
 
- 
+ # Docker & Kubernetes
+
+![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)</br>
+
+![Kubernetes](https://img.shields.io/badge/Kubernetes-2CA5E0?style=for-the-badge&logo=kubernetes&logoColor=white)</br>
+
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)</br>
+
+![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</br>
+
+![AWS](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white&labelColor=ED8B00)</br>
+
+![GCP](https://img.shields.io/badge/Google_Cloud-1A73E8?style=for-the-badge&logo=google-cloud&logoColor=1A73E8&labelColor=FAFAFA)</br>
+
+## DOCKER
+
+```bash
+
+
+```
+
+
+
+## KUBERNETES
+
+
+```bash
+
+
+```
+
+
+## Seed Database
+
+You can use the following commands to seed the database with some sample users and products as well as destroy all data
+
+```bash
+# Import data
+npm run data:import
+
+# Destroy data
+npm run data:destroy
+Sample User Logins
+```
+
+
+```bash
+# Sample User Logins
+
+admin@example.com (Admin)
+123456
+
+john@example.com (Customer)
+123456
+
+jane@example.com (Customer)
+123456
+```
