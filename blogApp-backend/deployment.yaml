@@ -34,7 +34,7 @@ spec:
         image: echaguiller/node-server
         env:
         - name: MONGO_URI
-          value: "mongodb+srv://pruebas:qACK9wE2aHyZLisu@cluster0.ancu4.mongodb.net/blogmern"
+          value: "process.env.MONGO_URI"
         - name: SECRET
           value: "Est03sMyPub1cK3y23@913"
         ports:
