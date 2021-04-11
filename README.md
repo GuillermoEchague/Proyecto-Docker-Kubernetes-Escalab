@@ -90,8 +90,15 @@ Connect with me
 ## DOCKER
 
 ```bash
+# Crear imagen Docker para frontend 
+cd blogapp-frontend
+docker build -t echaguiller/react-front 
+# Crear imagen Docker para backend 
+cd blogApp-backend
+docker build -t echaguiller/node-server .
 
-
+# Revisar Imagenes
+docker images
 ```
 
 
@@ -100,8 +107,25 @@ Connect with me
 
 
 ```bash
+# Crear namespace
+kubectl create namespace mern 
+## Ejecutar Deployment
+kubectl apply -f blogApp-backend/deployment.yaml
+kubectl apply -f blogapp-frontend/deployment.yaml
+# Revisar pods creados
+kubectl get pods -n mern
+# Revisar servicios creados y obtener External IP
+kubectl get svc -n mern
 
+# Eliminar Pods
+kubectl delete pod <Nombre del pod>
+# Descripción del pod
+kubectl describe pod <Nombre del pod> 
+# Descripción del Servicio
+kubectl describe service <Nombre del servicio>
 
+kubectl scale deployment <Nombre del nodo> --replicas=0
+kubectl scale deployment <Nombre del nodo> --replicas=1
 ```
 
 

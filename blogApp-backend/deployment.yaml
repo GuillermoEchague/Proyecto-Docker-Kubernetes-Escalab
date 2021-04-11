@@ -39,13 +39,7 @@ spec:
           value: "Est03sMyPub1cK3y23@913"
         ports:
         - containerPort: 8080
-        volumeMounts:
-          - name: vol
-            mountPath: /usr/src/app/uploads
-      volumes:
-        - name: vol
-          persistentVolumeClaim:
-            claimName: pvc-uploads-1
+        
     
 ---
 
