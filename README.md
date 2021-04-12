@@ -81,16 +81,19 @@ Connect with me
  # Docker & Kubernetes
 
 ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-2CA5E0?style=for-the-badge&logo=kubernetes&logoColor=white)</br>
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)</br>
+![Kubernetes](https://img.shields.io/badge/Kubernetes-2CA5E0?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![GCP](https://img.shields.io/badge/Google_Cloud-1A73E8?style=for-the-badge&logo=google-cloud&logoColor=1A73E8&labelColor=FAFAFA)
-![AWS](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white&labelColor=ED8B00)</br>
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) </br>
+
 
 ## DOCKER
 
 
 ```bash
+# Se crea imagen en local como en (1) o se descarga de dockerhub (2)
+
+# (1) Desarrollar Docker desde local 
 # Crear imagen Docker para frontend 
 cd blogapp-frontend
 docker build -t echaguiller/react-front .
@@ -98,12 +101,14 @@ docker build -t echaguiller/react-front .
 cd blogApp-backend
 docker build -t echaguiller/node-server .
 
-# Descargar de dockerhub
+# (2) Descargar de dockerhub
 # Imagen de Frontend en react
 docker push echaguiller/react-front:tagname
 # Imagen de Backend en node
 docker push echaguiller/node-server:tagname
 
+
+## ** Este Sección es opcional
 # Revisar Imagenes
 docker images
 # Correr imagen
@@ -132,10 +137,16 @@ docker volume prune
 
 ```bash
 # Crear namespace
-kubectl create namespace mern 
+kubectl create namespace mern
+
+kubectl get namespaces
+
 # Ejecutar Deployment
 kubectl apply -f blogApp-backend/deployment.yaml
 kubectl apply -f blogapp-frontend/deployment.yaml
+
+
+# Sección es opcional
 # Revisar pods creados
 kubectl get pods -n mern
 # Revisar servicios creados y obtener External IP
@@ -150,4 +161,29 @@ kubectl describe service <Nombre del servicio>
 
 kubectl scale deployment node-deployment-6b44cbf884-ks6ff --replicas=0
 kubectl scale deployment node-deployment-6b44cbf884-ks6ff --replicas=1
+```
+
+
+## GOOGLE CLOUD PROGRAM
+
+```bash
+# Logear desde GCP Bash
+gcloud auth configure-docker
+
+# Crear Imagenes
+docker build -t us.gcr.io/project-blog-310502/nodeblogapp .
+docker build -t us.gcr.io/project-blog-310502/reactblogapp .
+
+# Subir Imagenes
+docker push us.gcr.io/project-blog-310502/nodeblogapp
+docker push us.gcr.io/project-blog-310502/reactblogap
+```
+
+## Crear Secretos
+
+```bash
+kubectl create secret genertic db-credentials \
+--from-literal=MONGO_URI= <Mongo_URI> \
+--from-literal=SECRET=<SECRETO> \
+--from-literal=DB_USER=root -n mern
 ```
