@@ -32,11 +32,12 @@ spec:
       containers:
       - name: node
         image: echaguiller/node-server
+        imagePullPolicy: Always
         env:
         - name: MONGO_URI
           value: "process.env.MONGO_URI"
         - name: SECRET
-          value: "Est03sMyPub1cK3y23@913"
+          value: "process.env.SECRET"
         ports:
         - containerPort: 8080
         

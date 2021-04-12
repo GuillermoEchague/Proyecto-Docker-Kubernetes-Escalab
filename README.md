@@ -89,18 +89,42 @@ Connect with me
 
 ## DOCKER
 
+
 ```bash
 # Crear imagen Docker para frontend 
 cd blogapp-frontend
-docker build -t echaguiller/react-front 
+docker build -t echaguiller/react-front .
 # Crear imagen Docker para backend 
 cd blogApp-backend
 docker build -t echaguiller/node-server .
 
+# Descargar de dockerhub
+# Imagen de Frontend en react
+docker push echaguiller/react-front:tagname
+# Imagen de Backend en node
+docker push echaguiller/node-server:tagname
+
 # Revisar Imagenes
 docker images
-```
+# Correr imagen
+docker run -it <Nombre Imagen>
 
+# Borrar Contenedores
+docker ps -a
+docker rm <CONTAINER ID>
+docker rm <NAMES>
+
+# Borrar Imagenes
+docker images
+docker rmi <CONTAINER ID>
+docker rmi <NAMES>
+
+# Borrar volumenes
+docker volume ls
+docker volume rm <VOLUME NAME>
+# Elimina volumenes sin uso
+docker volume prune
+```
 
 
 ## KUBERNETES
@@ -109,7 +133,7 @@ docker images
 ```bash
 # Crear namespace
 kubectl create namespace mern 
-## Ejecutar Deployment
+# Ejecutar Deployment
 kubectl apply -f blogApp-backend/deployment.yaml
 kubectl apply -f blogapp-frontend/deployment.yaml
 # Revisar pods creados
@@ -124,34 +148,6 @@ kubectl describe pod <Nombre del pod>
 # Descripción del Servicio
 kubectl describe service <Nombre del servicio>
 
-kubectl scale deployment <Nombre del nodo> --replicas=0
-kubectl scale deployment <Nombre del nodo> --replicas=1
-```
-
-
-## Seed Database
-
-You can use the following commands to seed the database with some sample users and products as well as destroy all data
-
-```bash
-# Import data
-npm run data:import
-
-# Destroy data
-npm run data:destroy
-Sample User Logins
-```
-
-
-```bash
-# Sample User Logins
-
-admin@example.com (Admin)
-123456
-
-john@example.com (Customer)
-123456
-
-jane@example.com (Customer)
-123456
+kubectl scale deployment node-deployment-6b44cbf884-ks6ff --replicas=0
+kubectl scale deployment node-deployment-6b44cbf884-ks6ff --replicas=1
 ```
