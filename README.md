@@ -183,8 +183,8 @@ docker build -t us.gcr.io/project-blog-310502/node-server .
 docker build -t us.gcr.io/project-blog-310502/react-front .
 
 # Subir Imagenes
-docker push us.gcr.io/project-blog-310502/node-server .
-docker push us.gcr.io/project-blog-310502/react-front .
+docker push us.gcr.io/project-blog-310502/node-server 
+docker push us.gcr.io/project-blog-310502/react-front 
 ```
 
 ## Crear Secretos
