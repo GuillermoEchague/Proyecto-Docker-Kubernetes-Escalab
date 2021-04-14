@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: us.gcr.io/project-blog-310502/nodeblogapp
+        image: us.gcr.io/project-blog-310502/node-server
         imagePullPolicy: Always
         env:
         - name: MONGO_URI

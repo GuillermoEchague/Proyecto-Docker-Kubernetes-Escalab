@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: front
-        image: us.gcr.io/project-blog-310502/reactblogap
+        image: us.gcr.io/project-blog-310502/react-front
         ports:
         - containerPort: 80
 

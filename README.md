@@ -103,9 +103,9 @@ docker build -t echaguiller/node-server .
 
 # (2) Descargar de dockerhub
 # Imagen de Frontend en react
-docker push echaguiller/react-front:tagname
+docker pull echaguiller/react-front
 # Imagen de Backend en node
-docker push echaguiller/node-server:tagname
+docker pull echaguiller/node-server
 
 # (3) Descargar de GCP
 # Imagen de Frontend en react

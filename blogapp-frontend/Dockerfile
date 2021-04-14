@@ -12,10 +12,11 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
-RUN npm run build
+#EXPOSE 3000
+CMD [ "npm", "start" ]
 
 # etapa de producción
 FROM nginx:alpine as production-stage
-COPY --from=build-stage /usr/src/app/build /usr/share/nginx/html
+COPY --from=build-stage /usr/src/app/public /usr/share/nginx/html
 COPY nginx.conf /usr/src/nginx/conf.d/default.conf
 EXPOSE 80
