@@ -91,7 +91,7 @@ Connect with me
 
 
 ```bash
-# Se crea imagen en local como en (1) o se descarga de dockerhub (2)
+# Se crea imagen en local como en (1) o se descarga de dockerhub (2) 0 (3) desde GCP
 
 # (1) Desarrollar Docker desde local 
 # Crear imagen Docker para frontend 
@@ -106,6 +106,13 @@ docker build -t echaguiller/node-server .
 docker push echaguiller/react-front:tagname
 # Imagen de Backend en node
 docker push echaguiller/node-server:tagname
+
+# (3) Descargar de GCP
+# Imagen de Frontend en react
+us.gcr.io/project-blog-310502/reactblogap
+# Imagen de Backend en node
+us.gcr.io/project-blog-310502/nodeblogapp
+
 
 
 ## ** Este Sección es opcional
@@ -139,6 +146,7 @@ docker volume prune
 # Crear namespace
 kubectl create namespace mern
 
+# Lista de namespaces
 kubectl get namespaces
 
 # Ejecutar Deployment
@@ -146,7 +154,7 @@ kubectl apply -f blogApp-backend/deployment.yaml
 kubectl apply -f blogapp-frontend/deployment.yaml
 
 
-# Sección es opcional
+# ** Sección es opcional
 # Revisar pods creados
 kubectl get pods -n mern
 # Revisar servicios creados y obtener External IP
@@ -186,4 +194,14 @@ kubectl create secret genertic db-credentials \
 --from-literal=MONGO_URI= <Mongo_URI> \
 --from-literal=SECRET=<SECRETO> \
 --from-literal=DB_USER=root -n mern
+```
+
+
+## Seeder
+
+```bash
+  # Crear Datos en BD
+  cd /blogApp-backend
+  node seeder-user.js
+  node seeder-blog.js
 ```
