@@ -109,9 +109,9 @@ docker pull echaguiller/node-server
 
 # (3) Descargar de GCP
 # Imagen de Frontend en react
-us.gcr.io/project-blog-310502/reactblogap
+us.gcr.io/project-blog-310502/react-front
 # Imagen de Backend en node
-us.gcr.io/project-blog-310502/nodeblogapp
+us.gcr.io/project-blog-310502/node-server
 
 
 
@@ -179,12 +179,12 @@ kubectl scale deployment node-deployment-6b44cbf884-ks6ff --replicas=1
 gcloud auth configure-docker
 
 # Crear Imagenes
-docker build -t us.gcr.io/project-blog-310502/nodeblogapp .
-docker build -t us.gcr.io/project-blog-310502/reactblogapp .
+docker build -t us.gcr.io/project-blog-310502/node-server .
+docker build -t us.gcr.io/project-blog-310502/react-front .
 
 # Subir Imagenes
-docker push us.gcr.io/project-blog-310502/nodeblogapp
-docker push us.gcr.io/project-blog-310502/reactblogap
+docker push us.gcr.io/project-blog-310502/node-server .
+docker push us.gcr.io/project-blog-310502/react-front .
 ```
 
 ## Crear Secretos
